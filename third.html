@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Maker</title>
+    <link rel="stylesheet" href="third.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="input-container">
+        <div>
+            <label for="photo">Enter your photo</label><br>
+            <input type="file" id="photo" accept="image/*">
+        </div>
+        <div>
+            <label for="name"><br>Name</br></label>
+            <input type="text" id="name" placeholder="Enter Your Name In Caps">
+        </div>
+        <div>
+            <label for="Nickname"><br>Nickname</br></label>
+            <input type="text" id="Nickname" placeholder="Provide if Applicable">
+        </div>
+        <div>
+            <label for="Age"><br>Age</br></label>
+            <input type="number" id="Age" placeholder="Current Age">
+        </div>
+        <div>
+            <label for="Sex"><br>Sex</br></label>
+            <input type="text" id="Sex" placeholder="Identify Yourself">
+        </div>
+        <div>
+            <label for="Birthplace"><br>Birthplace</br></label>
+            <input type="text" id="Birthplace" placeholder="Location of Birth">
+        </div>
+        <div>
+            <label for="FName"><br>Father's Name</br></label>
+            <input type="text" id="FName" placeholder="Name of Father">
+        </div>
+        <div>
+            <label for="MName"><br>Mother's Name</br></label>
+            <input type="text" id="MName" placeholder="Name of Mother">
+        </div>
+        <div>
+            <label for="CStatus"><br>Civil Status</br></label>
+            <input type="text" id="CStatus" placeholder="Civil Status">
+        </div>
+        <div>
+            <label for="Nationality"><br>Nationality</br></label>
+            <input type="text" id="Nationality" placeholder="Permanent Nationality">
+        </div>
+        <div>
+            <label for="Religion"><br>Religion</br></label>
+            <input type="text" id="Religion" placeholder="Religion">
+        </div>
+        <div>
+            <label for="About"><br>Objective</br></label>
+            <input type="text" id="About" placeholder="Write a Few Lines About Yourself"><br><br>
+        </div>
+        <div>
+            <label for="Number">Enter your phone number</label>
+            <input type="number" id="Number" placeholder="Enter Your Work Phone Number"><br><br>
+        </div>
+        <div>
+            <label for="email">Email address</label><br>
+            <input type="email" id="email" placeholder="Enter Your Work Mail"><br><br>
+        </div>
+        <div>
+            <label for="address">Permanent Address</label><br>
+            <input type="text" id="address" placeholder="Enter Your Permanent Address"><
+        </div>
+        <div>
+            <label for="CRef">Character Reference</label><br>
+            <input type="text" id="CRef_Nmae" placeholder="Reference Name">
+            <input type="text" id="Position" placeholder="Reference Title/Position">
+            <input type="text" id="RefLocation" placeholder="Reference Location">
+            <input type="number" id="RefNumber" placeholder="Referance Number"><br>
+        </div>
+
+        <!-- Education -->
+        <div id="education-container">
+            <div class="education-entry">
+                <label for="institution">Educational Qualification</label><br>
+                <input type="text" class="institution" placeholder="Your Institution Name" required>
+                <button class="add-button" id="add-education">+</button>
+                <input type="text" class="course" placeholder="Course Studied" required><br></br>
+                <label for="startYear">Starting Year:</label>
+                <select class="startYear" required>
+                    <option value="">Select Year</option>
+                </select>
+                <label for="endYear">Ending Year:</label>
+                <select class="endYear" required>
+                    <option value="">Select Year</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Download Button -->
+        <button id="download-pdf">Download PDF</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let currentYear = new Date().getFullYear();
+            function populateYears(select) {
+                for (let i = currentYear; i >= 1950; i--) {
+                    let option = document.createElement("option");
+                    option.value = i;
+                    option.textContent = i;
+                    select.appendChild(option);
+                }
+            }
+
+            populateYears(document.querySelector(".startYear"));
+            populateYears(document.querySelector(".endYear"));
+
+            document.getElementById("add-education").addEventListener("click", function () {
+                let educationContainer = document.getElementById("education-container");
+                let newEntry = document.querySelector(".education-entry").cloneNode(true);
+                newEntry.querySelector("#add-education").remove(); // Remove add button from copied entry
+                newEntry.querySelector(".institution").value = "";
+                newEntry.querySelector(".course").value = "";
+                newEntry.querySelector(".startYear").innerHTML = "<option value=''>Select Year</option>";
+                newEntry.querySelector(".endYear").innerHTML = "<option value=''>Select Year</option>";
+                populateYears(newEntry.querySelector(".startYear"));
+                populateYears(newEntry.querySelector(".endYear"));
+                educationContainer.appendChild(newEntry);
+            });
+        });
+    </script>
+
+    <script src="third.js"></script>
+</body>
+</html>

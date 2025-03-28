@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif; /* Apply Lato font */
+    background: radial-gradient(circle, rgb(91, 219, 129) 0%, rgb(59, 83, 48) 100%);
+    color: #d9d9d9; /* Set font color to dark white/grey */
+    overflow: hidden;
+    position: relative;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7);
+    animation: float 10s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+}
+
+.container {
+    position: center;
+    z-index: 1;
+}
+
+main {
+    text-align: center;
+    padding: 100px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #e0e0e0; /* Slightly brighter grey for the heading */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+h1:hover {
+    color: #f4a261; /* Change to orange on hover */
+}
+
+p.description {
+    font-size: 1.2rem;
+    color: #d9d9d9; /* Dark white/grey for the paragraph */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth hover animation */
+}
+
+p.description:hover {
+    transform: scale(1.05); /* Slightly enlarge the paragraph on hover */
+    color: #e0e0e0; /* Slightly brighter grey */
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #cfcfcf; /* Slightly lighter grey for the footer text */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+footer:hover {
+    color: #ffffff; /* Change to bright white on hover */
+}
+
+button#startButton {
+    font-family: 'Lato', sans-serif;
+    padding: 10px 20px;
+    background-color: #44cc81;
+    border: none;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth hover animation */
+}
+
+button#startButton:hover {
+    background-color: #fcfdfd; /* Darker blue on hover */
+    transform: scale(1.1); /* Slightly enlarge the button */
+}
+
+#infoSection {
+    margin: 20px;
+    background-color: rgb(91, 219, 129);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    color: #333;
+    font-family: 'Lato', sans-serif;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth hover animation */
+}
+
+#infoSection:hover {
+    background-color: #77c96f; /* Slightly darker green on hover */
+    transform: scale(1.02); /* Slightly enlarge the section on hover */
+}
+
+#infoSection h2 {
+    color: #f4a261;
+    text-align: center;
+    margin-bottom: 15px;
+    transition: color 0.3s ease; /* Smooth hover animation */
+}
+
+#infoSection h2:hover {
+    color: #d97742; /* Darker orange on hover */
+}

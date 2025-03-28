@@ -1,0 +1,136 @@
+/* Global styles */
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #f5fdf7;
+  padding: 20px;
+  margin: 0;
+  animation: fadeIn 1.5s ease-in-out;
+  background: radial-gradient(circle, rgb(91, 219, 129) 0%, rgb(59, 83, 48) 100%);
+  color: #1b4332; /* Dark Green Font */
+  overflow: auto;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Placeholder styling */
+input::placeholder {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  color: #687e75; /* Dark Green */
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+/* Main container styling */
+.input-container {
+  background-color: #d8f3dc;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  max-width: fit-content;
+  margin: 20px auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #000000; /* Dark Green */
+}
+
+.input-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Input fields styling */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="file"] {
+  width: calc(100% - 20%);
+  padding: 15px;
+  border: 3px solid #81c784;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #ffffff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+  color: #1b4332; /* Dark Green */
+}
+
+/* Hover effect for input fields */
+input:hover {
+  border-color: #1b4332;
+  background-color: #e8f5e9;
+  box-shadow: 0 4px 10px rgba(27, 67, 50, 0.3);
+  transform: scale(1.02);
+}
+
+/* Focus effect for input fields */
+input:focus {
+  border-color: #40916c;
+  box-shadow: 0 0 6px rgba(64, 145, 108, 0.5);
+  outline: none;
+}
+
+/* Buttons */
+.add-button {
+  flex-shrink: 0;
+  width: 7%;
+  min-width: 50px;
+  height: 50px;
+  font-size: 20px;
+  background-color: #40916c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #1b4332;
+  transform: scale(1.05);
+}
+
+.add-button:active {
+  transform: scale(0.95);
+}
+
+/* Ensure new input fields appear below without awkward spacing */
+.new-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+/* Download button */
+#download-pdf {
+  background-color: #40916c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#download-pdf:hover {
+  background-color: #1b4332;
+  transform: scale(1.05);
+}
+
+#download-pdf:active {
+  transform: scale(0.95);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
